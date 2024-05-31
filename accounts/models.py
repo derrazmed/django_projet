@@ -6,3 +6,10 @@ class User(AbstractUser):
     user_permissions = models.ManyToManyField(Permission, related_name='custom_user_permissions')
     first_name = models.CharField(max_length=30, blank=True)
     last_name = models.CharField(max_length=30, blank=True)
+    
+    
+class Profile(models.Model):
+    first_name = models.CharField(max_length=30, blank=True)
+    last_name = models.CharField(max_length=30, blank=True)
+    age = models.IntegerField()
+    email = models.CharField(max_length=50, blank=True)
